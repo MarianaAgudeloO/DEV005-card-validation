@@ -1,6 +1,3 @@
-// //import validator from './validator.js';
-// //console.log(validator);
-
 // const enviar = document.getElementById("enviar");
 // enviar.addEventListener("click", function(event) {
 //   event.preventDefault();
@@ -36,20 +33,23 @@
 // });
 import validator from './validator.js';
 //Llamamos el número de tarjeta solicitado
-const enviar = document.getElementById("enviar");
-enviar.addEventListener("click", function(event) {
+const send = document.getElementById("send");
+send.addEventListener("click", function(event) {
   event.preventDefault();
   //Lista con el número de la tarjeta
-  const lista = document.getElementsByClassName("num");
+  const list = document.getElementsByClassName("num");
+  let name = document.getElementById("name");
+  name = name.value;
+  
   //Si el valor ingresado no es vacío, hacer esto:
-  if (lista[0].value!==''){
-    lista[0].toString().split('').map(digit => parseInt(digit));
-    const numero = [];
-    for (const elemento of lista) {
-      numero.push(elemento.value);
+  if (list[0].value!==''){
+    list[0].toString().split('').map(digit => parseInt(digit));
+    const num = [];
+    for (const elemento of list) {
+      num.push(elemento.value);
     }
     //Validación de la tarjeta de crédito
-    const creditCardNumber = numero.join('');
+    const creditCardNumber = num.join('');
     if (validator.isValid(creditCardNumber)) {
       alert('Es válida');
     } else {
@@ -62,8 +62,7 @@ enviar.addEventListener("click", function(event) {
     } else{
       maskedNumber=creditCardNumber;
     }
-    //No se puede ingresadr un espacio vacío
-    console.log(validator.checkFranchise(creditCardNumber));
+    //No se puede ingresar un espacio vacío
   } else{
     alert('Ingresa un valor para continuar')
   }

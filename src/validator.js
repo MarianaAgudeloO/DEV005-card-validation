@@ -1,24 +1,24 @@
 function isValid(creditCardNumber) {
-  const numero = [];
+  const num = [];
   for (let i = 0; i < creditCardNumber.length; i++) {
-    numero.push(parseInt(creditCardNumber[i]));
+    num.push(parseInt(creditCardNumber[i]));
   }
-  numero.reverse(); 
+  num.reverse(); 
   let i = 1;
-  while (i <= (numero.length - 1)) {
-    numero[i] = numero[i] * 2;
+  while (i <= (num.length - 1)) {
+    num[i] = num[i] * 2;
     i = i + 2;
   }
   let k = 0;
-  for (numero[k] of numero) {
-    if (numero[k] > 9) {
+  for (num[k] of num) {
+    if (num[k] > 9) {
       let sep = [];
-      sep = numero[k].toString().split('').map(digit => parseInt(digit));
-      numero[k] = sep[0] + sep[1];      
+      sep = num[k].toString().split('').map(digit => parseInt(digit));
+      num[k] = sep[0] + sep[1];      
     }
     k++;
   }
-  const total = numero.map(string => parseInt(string));
+  const total = num.map(string => parseInt(string));
   const suma = total.reduce((total, current) => total + current);
   return suma % 10 === 0;
 }
@@ -38,72 +38,72 @@ function maskify(creditCardNumber) {
 // 3 --- jcb dígitos 16
 // 2131, 1800 --- jcb dígitos 16
 function checkFranchise(creditCardNumber){
-  let banco='';
+  let bank='';
 
   //Banco jcb
   if (creditCardNumber.slice(0, 4) === '1800' && creditCardNumber.length === 16 || creditCardNumber.slice(0, 4) === '2131' && creditCardNumber.length === 16) {
-    banco='JCB'    
+    bank='JCB'    
   }
   //Banco jcb
   else if (creditCardNumber.charAt(0)==='3' && creditCardNumber.length === 16) 
   {
-    banco='JCB';    
+    bank='JCB';    
   }
 
   //Banco Dinner's Club/ enRoute
   else if (creditCardNumber.slice(0, 4) === '2014' && creditCardNumber.length === 14 || 
       creditCardNumber.slice(0, 4) === '2149' && creditCardNumber.length === 14)
   {    
-    banco="Dinner's Club/ enRoute";    
+    bank="Dinner's Club/ enRoute";    
   }
 
   //Banco Dinner's Club/ Carte Blanche
   else if (creditCardNumber.length === 14 && Number(creditCardNumber.slice(0, 3)) >= 300 && Number(creditCardNumber.slice(0, 3)) <= 305)
   {    
-    banco="Dinner's Club/ Carte Blanche";    
+    bank="Dinner's Club/ Carte Blanche";    
   }
 
   //Banco Dinner's Club/ Carte Blanche
   else if (creditCardNumber.slice(0, 2) === '38' && creditCardNumber.length === 14)
   {    
-    banco="Dinner's Club/ Carte Blanche";    
+    bank="Dinner's Club/ Carte Blanche";    
   }
 
   //Banco Dinner's Club/ International
   else if (creditCardNumber.slice(0, 2) === '36' && creditCardNumber.length === 14)
   {    
-    banco="Banco Dinner's Club/ International";    
+    bank="Banco Dinner's Club/ International";    
   }
 
   //Banco American Express
   else if (creditCardNumber.slice(0, 2) === '34' && creditCardNumber.length === 15 || creditCardNumber.slice(0, 2) === '37' && creditCardNumber.length === 15)
   {    
-    banco="American Express";    
+    bank="American Express";    
   }
 
   //Banco Visa
   else if ((creditCardNumber.slice(0, 1) === '4' && creditCardNumber.length === 16)||
            (creditCardNumber.slice(0, 1) === '4' && creditCardNumber.length === 13))
   {    
-    banco="Visa";    
+    bank="Visa";    
   }
 
   //Banco MasterCard
   else if (creditCardNumber.length === 16 && creditCardNumber.slice(0, 2) >= 51 && creditCardNumber.slice(0, 2) <= 55) {
-    banco = "MasterCard";
+    bank = "MasterCard";
   }
 
   //Banco Discover
   else if (creditCardNumber.slice(0, 4) === '6011' && creditCardNumber.length === 16)
   {    
-    banco="Discover";    
+    bank="Discover";    
   }
 
   else{
-    banco='No identificado';
+    bank='No identificado';
   }
 
-  return(alert(banco));
+  return(alert(bank));
 }
 
 export default {
