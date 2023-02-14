@@ -24,9 +24,16 @@ function isValid(creditCardNumber) {
 }
 
 function maskify(creditCardNumber) {
-  const lastFour = creditCardNumber.slice(-4);
-  const masked = '*'.repeat(creditCardNumber.length - 4);
-  return masked + lastFour;
+  let maskedNumber
+  if (creditCardNumber.length>4){
+    const lastFour = creditCardNumber.slice(-4);
+    const masked = '*'.repeat(creditCardNumber.length - 4);
+    maskedNumber = masked + lastFour
+  }
+  else {
+    maskedNumber = creditCardNumber;
+  }  
+  return (maskedNumber);
 }
 // 51-55 --- mc dígitos 16
 // 4 --- visa dígitos 13 o 16

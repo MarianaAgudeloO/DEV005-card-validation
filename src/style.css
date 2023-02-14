@@ -59,45 +59,46 @@ p {
   width: 90px;
   height: 60px;
   position: fixed;
-  top: 435px; 
-  left: 1045px; 
+  top: 490px; 
+  left: 1125px; 
 }
 #cardContainer {
-  border: 3px solid;
+  border: 5px solid;
   border-color: black;
   border-radius: 7px;
   width: 450px;
   height: 250px;
   position: fixed;
-  top: 215px;
-  left: 700px;    
+  top: 270px;
+  left: 780px;      
 }
 #resultContainer{
   width: 450px;
   height: 250px;
   position: relative;    
-  left: 300px;    
+  left: -250px;    
+  color: white;
 }
 #nameCard{  
   position: fixed;
-  top: 440px;
-  left: 710px;
+  top: 505px;
+  left: 790px;
 }
 #bankName{
   position: fixed;
-  top: 260px;
-  left: 710px;  
+  top: 325px;
+  left: 790px;  
   font-size: 40px;
 }
 #maskedNumber{
   position: fixed;
-  top: 410px;
-  left: 710px;  
+  top: 475px;
+  left: 790px;  
 }
 #validityStatus{
   position: fixed;
-  top: 350px;
-  left: 710px;   
+  top: 415px;
+  left: 790px;   
   color: #D82C2C ;
   font-size: 30px;
 }
@@ -109,6 +110,15 @@ p.textCard{
   width: 80px;
   height: 60px;
   position: fixed;
-  top: 275px; 
-  left: 1045px; 
+  top: 330px; 
+  left: 1125px; 
+}
+#mainContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 950px;
+  height: 400PX;
+  position: relative;
+  top: -15px; 
+  left: 320px;
+  border-radius: 12px;
 }

@@ -27,6 +27,11 @@ send.addEventListener("click", function(event) {
   if (cardContainer) {
     cardContainer.remove();
   }
+  const mainContainer = document.getElementById("mainContainer");
+  if (mainContainer) {
+    mainContainer.remove();
+  }
+
 
   //Si el valor ingresado no es vacío, hacer esto:
   if (list[0].value!==''){
@@ -48,12 +53,7 @@ send.addEventListener("click", function(event) {
     const logo = franchise.logo;
     const color = franchise.color;
     //Ocultar número de la tarjeta
-    let maskedNumber =0;
-    if (creditCardNumber.length>4){
-      maskedNumber = validator.maskify(creditCardNumber);
-    } else{
-      maskedNumber=creditCardNumber;
-    }
+    const maskedNumber = validator.maskify(creditCardNumber);   
 
     const container = document.createElement("div");
     container.id = "resultContainer";
@@ -126,6 +126,16 @@ send.addEventListener("click", function(event) {
 
     // Agregar el div al body de la página
     document.body.appendChild(cardContainer);
+
+    const mainContainer = document.createElement("div");
+    mainContainer.id = "mainContainer";
+
+    // Agregar los contenedores existentes al nuevo div
+    mainContainer.appendChild(container);
+    mainContainer.appendChild(cardContainer);
+
+    // Agregar el nuevo div al body de la página
+    document.body.appendChild(mainContainer);
 
     //No se puede ingresar un espacio vacío
   } else{
