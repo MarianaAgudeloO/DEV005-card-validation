@@ -4,34 +4,19 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="icon" type="image" href="/images/icon.jpg"> -->
-    <!-- <script>
-      function casillas() {
-        var numcasillas = parseInt(document.getElementById("numcasillas").value);
-        var casillas = "";
-        var boton="";
-        for (var i = 0; i < numcasillas; i++) {
-          casillas += "<input type='text' class='num' maxlength='1'>";
-        }        
-        document.getElementById("casillas").innerHTML = casillas;
-        enviar="<button id='enviar'>Enviar</button>"
-        document.getElementById("enviar").innerHTML = enviar;        
-      } 
-    </script>  -->
+    <link rel="icon" type="image/png" href="images/icon.png">
   </head> 
     
     <body>
-      <!-- <input type="text" id="numcasillas" placeholder="¿Cuántos números tiene su tarjeta de crédito?"> -->
-      
-      <!-- <button onclick="casillas()">Enviar</button> -->
-      <!-- <p id="casillas"></p>
-      <p id="enviar"></p> -->
-      <input type="text" id="name" placeholder="Ingresa el nombre como aparece en la tarjeta">
-      <br>
-      <input type='text' class='num' placeholder="Ingresa el número de la tarjeta">
-      <button id='send'>Enviar</button>
-    <header></header>    
-    <main></main>
+      <header></header>    
+       
+    <main>
+      <div id="main">
+        <input type="text" id="name" placeholder="Ingresa el nombre como aparece en la tarjeta">
+        <input type='text' class='num' id="number" placeholder="Ingresa el número de la tarjeta">
+        <button id='send'>ENVIAR</button>
+      </div>
+    </main>
     <footer></footer>
     <script src="index.js" type="module"></script>
   </body>

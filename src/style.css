@@ -1,3 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+* {
+  transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-family: "Montserrat",sans-serif;  
+}
 body{
-    background-color: #2471A3;
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+input{
+  color: #000;  
+  background-color: white;
+  justify-content: center;
+  border-style:outset;
+  border-width: 3px;
+  border-color: #000;
+  border-radius: 3px;
+  width: 390px;
+  height: 25px;
+  padding: 12px;
+  text-align: center;
+  margin: 5px;
+}
+input:hover{
+  transform: scale(1.05);
+}
+#send {
+  color: #000;  
+  background-color: rgb(198, 198, 198);
+  justify-content: center;
+  border-style:outset;
+  border-width: 3px;
+  border: color #000;
+  border-radius: 3px;  
+  padding: 8px;
+  width: 300px;
+  justify-content: center;
+  display: grid;  
+  margin: 0 auto; 
+}
+#send:hover{
+    background-color: #000;
+    color: white;
+    transform: scale(1.05);
+}
+div {
+  display: grid;
+  place-content: center;
+  margin-top: 3%;
+}
+p {
+  margin: 25px;  
+  }
+#logoCard {
+  width: 90px;
+  height: 60px;
+  position: fixed;
+  top: 435px; 
+  left: 1045px; 
+}
+#cardContainer {
+  border: 3px solid;
+  border-color: black;
+  border-radius: 7px;
+  width: 450px;
+  height: 250px;
+  position: fixed;
+  top: 215px;
+  left: 700px;    
+}
+#resultContainer{
+  width: 450px;
+  height: 250px;
+  position: relative;    
+  left: 300px;    
+}
+#nameCard{  
+  position: fixed;
+  top: 440px;
+  left: 710px;
+}
+#bankName{
+  position: fixed;
+  top: 260px;
+  left: 710px;  
+  font-size: 40px;
+}
+#maskedNumber{
+  position: fixed;
+  top: 410px;
+  left: 710px;  
+}
+#validityStatus{
+  position: fixed;
+  top: 350px;
+  left: 710px;   
+  color: #D82C2C ;
+  font-size: 30px;
+}
+p.textCard{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
+#chip{
+  width: 80px;
+  height: 60px;
+  position: fixed;
+  top: 275px; 
+  left: 1045px; 
 }

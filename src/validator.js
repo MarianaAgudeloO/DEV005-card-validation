@@ -38,72 +38,96 @@ function maskify(creditCardNumber) {
 // 3 --- jcb dígitos 16
 // 2131, 1800 --- jcb dígitos 16
 function checkFranchise(creditCardNumber){
-  let bank='';
+  let bank = '';
+  let logo = '';
+  let color = '';
 
   //Banco jcb
   if (creditCardNumber.slice(0, 4) === '1800' && creditCardNumber.length === 16 || creditCardNumber.slice(0, 4) === '2131' && creditCardNumber.length === 16) {
-    bank='JCB'    
+    bank ='JCB'  
+    logo ='images/jcb.png'; 
+    color = '#2850820';
   }
   //Banco jcb
   else if (creditCardNumber.charAt(0)==='3' && creditCardNumber.length === 16) 
   {
-    bank='JCB';    
+    bank='JCB';  
+    logo='images/jcn.png'; 
+    color = '#2850820';  
   }
 
-  //Banco Dinner's Club/ enRoute
+  //Banco Diner's Club/ enRoute
   else if (creditCardNumber.slice(0, 4) === '2014' && creditCardNumber.length === 14 || 
       creditCardNumber.slice(0, 4) === '2149' && creditCardNumber.length === 14)
   {    
-    bank="Dinner's Club/ enRoute";    
+    bank="enRoute";
+    logo='images/enRoute.png';  
+    color = '#8C1A2B';   
   }
 
-  //Banco Dinner's Club/ Carte Blanche
+  //Banco Diner's Club/ Carte Blanche
   else if (creditCardNumber.length === 14 && Number(creditCardNumber.slice(0, 3)) >= 300 && Number(creditCardNumber.slice(0, 3)) <= 305)
   {    
-    bank="Dinner's Club/ Carte Blanche";    
+    bank="Carte Blanche"; 
+    logo='images/carte.png';
+    color = "#4B4945";    
   }
 
-  //Banco Dinner's Club/ Carte Blanche
+  //Banco Diner's Club/ Carte Blanche
   else if (creditCardNumber.slice(0, 2) === '38' && creditCardNumber.length === 14)
   {    
-    bank="Dinner's Club/ Carte Blanche";    
+    bank="Carte Blanche";
+    logo='images/carte.png';     
+    color = "#4B4945";  
   }
 
-  //Banco Dinner's Club/ International
+  //Banco Diner's Club/ International
   else if (creditCardNumber.slice(0, 2) === '36' && creditCardNumber.length === 14)
   {    
-    bank="Banco Dinner's Club/ International";    
+    bank="Diner's/International";   
+    logo='images/inter.png';  
+    color = "#B8B8B8";
   }
 
   //Banco American Express
   else if (creditCardNumber.slice(0, 2) === '34' && creditCardNumber.length === 15 || creditCardNumber.slice(0, 2) === '37' && creditCardNumber.length === 15)
   {    
-    bank="American Express";    
+    bank="AmericanExpress";
+    logo='images/american-express.png';   
+    color = "#DADADC";    
   }
 
   //Banco Visa
   else if ((creditCardNumber.slice(0, 1) === '4' && creditCardNumber.length === 16)||
            (creditCardNumber.slice(0, 1) === '4' && creditCardNumber.length === 13))
   {    
-    bank="Visa";    
+    bank="Visa"; 
+    logo='images/visa.png';   
+    color = "#004689"; 
   }
 
   //Banco MasterCard
   else if (creditCardNumber.length === 16 && creditCardNumber.slice(0, 2) >= 51 && creditCardNumber.slice(0, 2) <= 55) {
     bank = "MasterCard";
+    logo ='images/mc.png'; 
+    color = "#B39156";
   }
 
   //Banco Discover
   else if (creditCardNumber.slice(0, 4) === '6011' && creditCardNumber.length === 16)
   {    
-    bank="Discover";    
+    bank ="Discover"; 
+    logo ='images/discover.png';   
+    color = "#464548";
   }
 
   else{
-    bank='No identificado';
+    bank ='No identificado';
+    logo ='images/no.png';
+    color = 'white';
   }
 
-  return(alert(bank));
+  return{bank, logo, color};
 }
 
 export default {
