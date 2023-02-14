@@ -81,7 +81,7 @@ p {
 }
 #nameCard{  
   position: fixed;
-  top: 505px;
+  top: 495px;
   left: 790px;
 }
 #bankName{
@@ -92,7 +92,7 @@ p {
 }
 #maskedNumber{
   position: fixed;
-  top: 475px;
+  top: 465px;
   left: 790px;  
 }
 #validityStatus{
@@ -110,8 +110,8 @@ p.textCard{
   width: 80px;
   height: 60px;
   position: fixed;
-  top: 330px; 
-  left: 1125px; 
+  top: 335px; 
+  left: 1135px; 
 }
 #mainContainer {
   background-color: rgba(0, 0, 0, 0.7);

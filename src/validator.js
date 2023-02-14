@@ -41,7 +41,7 @@ function maskify(creditCardNumber) {
 // 300-305 --- diners carte blanche dígitos 14
 // 36 --- diners int dígitos 14
 // 6011 --- discover dígitos 16
-// 2014, 2149 diners er --- dígitos 14
+// 2014, 2149 diners er --- dígitos 15
 // 3 --- jcb dígitos 16
 // 2131, 1800 --- jcb dígitos 16
 function checkFranchise(creditCardNumber){
@@ -51,25 +51,25 @@ function checkFranchise(creditCardNumber){
 
   //Banco jcb
   if (creditCardNumber.slice(0, 4) === '1800' && creditCardNumber.length === 16 || creditCardNumber.slice(0, 4) === '2131' && creditCardNumber.length === 16) {
-    bank ='JCB'  
+    bank ='JCB';  
     logo ='images/jcb.png'; 
-    color = '#2850820';
+    color = "#004689";
   }
   //Banco jcb
   else if (creditCardNumber.charAt(0)==='3' && creditCardNumber.length === 16) 
   {
     bank='JCB';  
-    logo='images/jcn.png'; 
-    color = '#2850820';  
+    logo='images/jcb.png'; 
+    color = "#004689";  
   }
 
   //Banco Diner's Club/ enRoute
-  else if (creditCardNumber.slice(0, 4) === '2014' && creditCardNumber.length === 14 || 
-      creditCardNumber.slice(0, 4) === '2149' && creditCardNumber.length === 14)
+  else if (creditCardNumber.slice(0, 4) === '2014' && creditCardNumber.length === 15 || 
+      creditCardNumber.slice(0, 4) === '2149' && creditCardNumber.length === 15)
   {    
     bank="enRoute";
     logo='images/enRoute.png';  
-    color = '#8C1A2B';   
+    color = "#8C1A2B";   
   }
 
   //Banco Diner's Club/ Carte Blanche
@@ -91,7 +91,7 @@ function checkFranchise(creditCardNumber){
   //Banco Diner's Club/ International
   else if (creditCardNumber.slice(0, 2) === '36' && creditCardNumber.length === 14)
   {    
-    bank="Diner's/International";   
+    bank="International";   
     logo='images/inter.png';  
     color = "#B8B8B8";
   }
