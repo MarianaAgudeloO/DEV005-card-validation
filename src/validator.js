@@ -110,7 +110,7 @@ function checkFranchise(creditCardNumber){
   {    
     bank="Visa"; 
     logo='images/visa.png';   
-    color = "#004689"; 
+    color = "#2980B9"; 
   }
 
   //Banco MasterCard

@@ -105,6 +105,12 @@ send.addEventListener("click", function(event) {
     const validity = document.createElement("p");
     validity.classList.add("textCard");
     validity.id = "validityStatus";
+    if (valid === 'Es válida'){
+      validity.style.color = "green";
+    }
+    else{
+      validity.style.color = "red";
+    }
     validity.innerHTML = valid;
 
     const logoCard = document.createElement("img");
