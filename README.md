@@ -1,5 +1,5 @@
 Validador de Tarjetas
-Esta página web te permite ingresar tu nombre y número de tarjeta de crédito o débito para verificar si la tarjeta es válida y a qué sucursal pertenece.
+Esta página web te permite ingresar tu nombre y número de tarjeta de crédito o débito para verificar si la tarjeta es válida y a qué sucursal pertenece. Está orientado a personas que dedseen validar si una tarjeta es válida y a qué sucursal pertenece.
 
 ¿Cómo usar?
 Ingresa tu nombre en el campo "Nombre" sin usar caracteres especiales.
