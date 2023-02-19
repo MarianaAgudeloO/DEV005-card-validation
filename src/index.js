@@ -1,13 +1,12 @@
 import validator from './validator.js';
 //Llamamos el número de tarjeta solicitado
 const send = document.getElementById("send");
-send.addEventListener("click", function(event) {
-  event.preventDefault();
+send.addEventListener("click", function() {
   //Lista con el número de la tarjeta
   const list = document.getElementsByClassName("num");
   let name = document.getElementById("name");
   name = name.value;
-
+  
   // Eliminar elementos "p" previos
   const previousResults = document.getElementsByTagName("p");
   while (previousResults.length > 0) {
@@ -31,17 +30,9 @@ send.addEventListener("click", function(event) {
   if (mainContainer) {
     mainContainer.remove();
   }
-
-
+  const creditCardNumber = list[0].value;
   //Si el valor ingresado no es vacío, hacer esto:
-  if (list[0].value!==''){
-    list[0].toString().split('').map(digit => parseInt(digit));
-    const num = [];
-    for (const elemento of list) {
-      num.push(elemento.value);
-    }
-    //Validación de la tarjeta de crédito
-    const creditCardNumber = num.join('');
+  if (creditCardNumber!==''){
     let valid='';
     if (validator.isValid(creditCardNumber)) {
       valid='Es válida';
